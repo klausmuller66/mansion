@@ -13,8 +13,9 @@ fn main() {
             .add_plugins((
                 DefaultPlugins,
                 WorldPlugin,
-                CameraPlugin,
                 PhysicsPlugins::default(),
+                PhysicsDebugPlugin::default(),
+                CameraPlugin,
             ))
             .run();
 }
