@@ -6,7 +6,6 @@ pub struct WorldPlugin;
 
 impl Plugin for WorldPlugin {
     fn build(&self, app: &mut App) {
-        app.add_plugins((PhysicsPlugins::default(), PhysicsDebugPlugin::default()));
         app.add_systems(Startup, spawn_world);
         app.insert_resource(AmbientLight {
             color: Color::WHITE,
