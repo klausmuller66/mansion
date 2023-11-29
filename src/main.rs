@@ -1,16 +1,20 @@
 use bevy:: prelude::*;
+use bevy_xpbd_3d::{math::*, prelude::*};
 
 mod world;
 mod camera;
-mod walk;
 
 
 use world::WorldPlugin;
 use camera::CameraPlugin;
-use walk::WalkPlugin;
 
 fn main() {
         App::new()
-            .add_plugins((DefaultPlugins, WorldPlugin, CameraPlugin, WalkPlugin))
+            .add_plugins((
+                DefaultPlugins,
+                WorldPlugin,
+                CameraPlugin,
+                PhysicsPlugins::default(),
+            ))
             .run();
 }
